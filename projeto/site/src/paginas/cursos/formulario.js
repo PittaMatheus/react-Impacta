@@ -11,7 +11,7 @@ export const Formulario = props => (
         <div className="col-sm-5 col-6">
           <input type="number"
             onChange={props.atualizaCodigo}
-            className="form-control" id="codigo" defaultValue={props.codigo} />
+            className="form-control" id="codigo" value={props.codigo} />
         </div>
       </div>
       <div className="form-group row">
@@ -22,7 +22,7 @@ export const Formulario = props => (
         <div className="col-sm-9">
           <input type="text"
             onChange={props.atualizaDescricao}
-            className="form-control" id="descricao" defaultValue={props.descricao} />
+            className="form-control" id="descricao" value={props.descricao} />
         </div>
       </div>
       <div className="form-group row">
@@ -32,7 +32,7 @@ export const Formulario = props => (
         <div className="col-sm-5 col-6">
           <input type="number"
             onChange={props.atualizaCargaHoraria}
-            className="form-control" defaultValue={props.cargaHoraria} id="cargaHoraria" />
+            className="form-control" value={props.cargaHoraria} id="cargaHoraria" />
         </div>
       </div>
 
@@ -43,7 +43,7 @@ export const Formulario = props => (
         <div className="col-sm-5 col-6">
           <input type="text"
             onChange={props.atualizaPreco}
-            className="form-control" defaultValue={props.preco} id="preco" />
+            className="form-control" value={props.preco} id="preco" />
         </div>
       </div>
 
@@ -53,7 +53,7 @@ export const Formulario = props => (
         <div className="col-sm-6 col-6">
           <select
             onChange={props.atualizaCategoria}
-            defaultValue={props.categoria} className="form-control" id="categoria" >
+            value={props.categoria} className="form-control" id="categoria" >
             <option>INFORMATICA</option>
             <option>ENGENHARIA</option>
             <option>ADMINISTRACAO</option>
