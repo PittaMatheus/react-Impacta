@@ -1,5 +1,4 @@
 import axios from 'axios';
-import { ListaCursos } from '../paginas/cursos/lista';
 const URL = 'http://localhost:3200/api/contatos';
 
 

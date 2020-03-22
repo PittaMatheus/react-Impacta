@@ -1,7 +1,11 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 
 
-export const ListaCursos = props => {
+
+
+const ListaCursos = props => {
   const exibirLinhas = () => {
    const cursos = props.cursos || []
    return cursos.map(curso => (
@@ -30,3 +34,14 @@ export const ListaCursos = props => {
     </div>
   )
 }
+
+const mapStoreTopProps = store => ({
+  cursos: store.curso.cursos
+
+});
+
+
+
+const conn = connect(mapStoreTopProps, null)(ListaCursos);
+
+export { conn as ListaCursos }
