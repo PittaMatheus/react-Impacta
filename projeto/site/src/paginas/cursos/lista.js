@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import { editarCurso, removerCurso } from '../../actions/curso';
 
 
 
@@ -40,8 +41,13 @@ const mapStoreTopProps = store => ({
 
 });
 
+const mapActionsToProps = dispatch => bindActionCreators({
+  editarCurso,
+  removerCurso
+}, dispatch);
 
 
-const conn = connect(mapStoreTopProps, null)(ListaCursos);
+
+const conn = connect(mapStoreTopProps, mapActionsToProps)(ListaCursos);
 
 export { conn as ListaCursos }

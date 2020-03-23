@@ -8,16 +8,12 @@ const INITIAL_STATE = {
 }
 
 export default (state = INITIAL_STATE, action) => {
+  // mantem os cursos existentes
+  let cursos = state.cursos
   switch (action.type) {
-    case 'LIMPAR_CURSOS': { 
-      let cursos = state.cursos
-      return {...INITIAL_STATE, cursos}
-    } ;
-    case 'ATUALIZA_CODIGO': return { ...state, codigo: action.info }
-    case 'ATUALIZA_DESCRICAO': return { ...state, descricao: action.info }
-    case 'ATUALIZA_CARGA_HORARIA': return { ...state, cargaHoraria: action.info }
-    case 'ATUALIZA_CATEGORIA': return { ...state, categoria: action.info }
-    case 'ATUALIZA_PRECO': return { ...state, preco: action.info }
+    case 'LIMPAR_CURSOS': { return { ...INITIAL_STATE, cursos } };
+    case 'ATUALIZA_CAMPO': return { ...state, [action.name]: action.info }
+    case 'EDITAR_CURSO': let curso = action.info; return { ...curso, cursos }
     case 'GET_CURSOS': return { ...state, cursos: action.info }
 
     default: return state;
