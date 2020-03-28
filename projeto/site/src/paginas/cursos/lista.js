@@ -3,9 +3,6 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { editarCurso, removerCurso } from '../../actions/curso';
 
-
-
-
 const ListaCursos = props => {
   const exibirLinhas = () => {
    const cursos = props.cursos || []
@@ -35,19 +32,12 @@ const ListaCursos = props => {
     </div>
   )
 }
-
 const mapStoreTopProps = store => ({
   cursos: store.curso.cursos
-
 });
-
 const mapActionsToProps = dispatch => bindActionCreators({
   editarCurso,
   removerCurso
 }, dispatch);
-
-
-
 const conn = connect(mapStoreTopProps, mapActionsToProps)(ListaCursos);
-
 export { conn as ListaCursos }
